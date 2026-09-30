@@ -1,23 +1,28 @@
 #include <iostream>
 
-// Lab 5 — Your Name
-// CIS 5 Week 05 · Eligibility check
+// Lab 5 - Andy Munoz
+// CIS Week 5 - Eligibility Check
 
 int main() {
-  int age = 0;
-  double gpa = 0.0;
+	int age = 0;
+	double gpa = 0.0;
+	std::cout << "Age? ";
+	std::cin >> age;
+	std::cout << "GPA? ";
+	std::cin >> gpa;
 
-  // TODO: cout question, then cin, for age and for gpa
+	bool adult = age >= 18;
+	bool honors = gpa >= 3.5;
 
-  // Thresholds: adult at 18, honors at 3.5 (change these and say why in a comment)
-  // TODO: bool adult = ...;
-  // TODO: bool honors = ...;
-
-  // TODO: if (adult && honors) { ... }        best case first
-  // TODO: else if (adult || honors) { ... }   exactly one requirement met
-  // TODO: else { ... }                        neither — the program still answers
-
-  // Edge values to run: 17 / 18 with a 3.8, and 3.4 / 3.5 with age 20
-
-  return 0;
+	if (adult && honors) {
+		std::cout << "You are eligible for the honors program!\n";
+	}
+	else if (adult || honors) {
+		std::cout << "Halfway there. One requirement met.\n";
+	}
+	else {
+		std::cout << "Not eligible.\n";
+	}
+	//test agees 17 / 18 with 3.8 and 3.4 / 3.5 with age 20
+	return 0;
 }
